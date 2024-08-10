@@ -1,0 +1,44 @@
+<div class="train-new-model">  
+  <h2>Train New Model</h2>
+
+  <div class="form-group">
+    <label for="modelType">Select Model Type</label>
+    <select id="modelType" [(ngModel)]="selected_model_type" class="form-control">
+      <option value="">--Select--</option>
+      <option value="classification">Classification</option>
+      <option value="detection">Detection</option>
+    </select>
+  </div>
+
+  <div *ngIf="selected_model_type" class="form-group">
+    <label for="dataset">Select Dataset</label>
+    <select *ngIf="selected_model_type=='classification'" id="dataset" [(ngModel)]="selected_dataset_id" class="form-control">
+      <option *ngFor="let dataset of classification_datasets" [value]="dataset.id">{{dataset.title}}</option>
+    </select>
+    <select *ngIf="selected_model_type=='detection'" id="dataset" [(ngModel)]="selected_dataset_id" class="form-control">
+      <option *ngFor="let dataset of detection_datasets" [value]="dataset.id">{{dataset.title}}</option>
+    </select>
+  </div>
+
+  <div *ngIf="selected_model_type" class="form-group">
+    <label for="modelName">Model Name</label>
+    <input id="modelName" [(ngModel)]="model_name" class="form-control" placeholder="Enter model name">
+  </div>
+
+  <div *ngIf="selected_model_type" class="form-group">
+    <label for="modelDescription">Model Description</label>
+    <textarea id="modelDescription" [(ngModel)]="model_description" class="form-control" placeholder="Enter model description"></textarea>
+  </div>
+
+  <div *ngIf="selected_model_type=='detection'" class="form-group">
+    <label for="yoloBaseModel">YOLO Base Model</label>
+    <select id="yoloBaseModel" [(ngModel)]="yolo_base_model" class="form-control">
+      <option value="">--Select--</option>
+      <option *ngFor="let model of yolo_base_models" [value]="model">{{model}}</option>
+    </select>
+  </div>
+
+  <div class="form-actions">
+    <button type="button" (click)="startTraining()" [disabled]="!isFormValid()" class="btn btn-primary">Start Training</button>
+  </div>
+</div>

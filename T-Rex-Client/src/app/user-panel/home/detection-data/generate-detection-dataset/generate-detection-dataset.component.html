@@ -1,0 +1,50 @@
+<div class="form-container">
+  <h2 class="form-title">Generate Detection Dataset From Detection Data</h2>
+  <form (ngSubmit)="onSubmit()" #datasetForm="ngForm" class="dataset-form">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" [(ngModel)]="dataset.title" required class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" [(ngModel)]="dataset.description" required class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="detectionModel">Detection Model</label>
+      <select id="detectionModel" name="detectionModel" [(ngModel)]="dataset.detectionModelId" class="form-control">
+        <option *ngFor="let model of detection_models" [value]="model.id">{{model.title}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="classificationModel">Classification Model</label>
+      <select id="classificationModel" name="classificationModel" [(ngModel)]="dataset.classificationModelId" class="form-control">
+        <option *ngFor="let model of classification_models" [value]="model.id">{{model.title}}</option>
+      </select>
+    </div>
+
+    <div *ngFor="let refImage of dataset.referenceImages; let i = index" class="reference-image-group">
+      <div class="form-group">
+        <label for="referenceImage{{i}}">Reference Image {{i + 1}}</label>
+        <input type="file" id="referenceImage{{i}}" name="referenceImage{{i}}" (change)="onFileSelected($event, i)" accept="image/*" required class="form-control">
+      </div>
+
+      <app-bounding-box-editor
+        *ngIf="refImage.previewUrl"
+        [imageUrl]="refImage.previewUrl">
+      </app-bounding-box-editor>
+
+      <button type="button" (click)="removeReferenceImage(i)" class="btn btn-danger">Remove Reference Image</button>
+    </div>
+    
+    <button type="button" (click)="addReferenceImage()" class="btn btn-secondary">Add Reference Image</button>
+    
+    <div class="form-actions">
+      <button type="submit" [disabled]="!datasetForm.form.valid" class="btn btn-primary">Submit</button>
+      <button type="button" (click)="onCancel()" class="btn btn-secondary">Cancel</button>
+    </div>
+  </form>
+</div>
+<app-loading-animation></app-loading-animation>

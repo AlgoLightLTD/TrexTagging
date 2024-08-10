@@ -1,0 +1,34 @@
+/* Add styles for the home component */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .bg-blue-800 {
+    background-color: #2b6cb0;
+  }
+  
+  .bg-gray-200 {
+    background-color: #edf2f7;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .text-black {
+    color: black;
+  }
+
+  

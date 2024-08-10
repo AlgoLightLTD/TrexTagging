@@ -1,0 +1,16 @@
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+  
+.dialog-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}

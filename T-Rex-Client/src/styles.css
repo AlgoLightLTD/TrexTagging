@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.base-border{
+    @apply border-gray-200 rounded-2xl border-2;
+}
+.question-container {
+    @apply justify-center items-center h-auto base-border space-y-4 py-3 px-2;
+}
+
+.question-title {
+    @apply text-4xl text-gray-800;
+}
+
+.question-text {
+    @apply text-lg text-gray-900 font-semibold;
+}
+
+.show-answer-button {
+    @apply text-sm text-gray-500 hover:text-blue-500 font-medium;
+}
+
+.unit-main-div {
+    @apply flex justify-center items-center bg-white h-auto base-border;
+}
+
+.unit-second-div {
+    @apply flex flex-col items-center pt-10 overflow-y-auto space-y-4 mt-2 mx-7 mb-10;
+}
+
+.unit-title {
+    @apply text-3xl text-center;
+}   
+
+.unit-description {
+    @apply text-xl;
+}
+
+.chapter-title {
+    @apply unit-title mt-6 font-bold;
+}   
+
+.chapter-description {
+    @apply unit-description text-center mt-3;
+}
+
+.test-border{
+    @apply border-red-500 rounded-xl border-2 border-dotted;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.base-btn-transition {
+    @apply px-4 py-2 rounded-full;
+    transition-property: background-color, color, transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+.base-btn-transition:hover {
+    @apply bg-selected-green;
+    color: #FFFFFF !important;
+    transform: scale(1.1);
+}

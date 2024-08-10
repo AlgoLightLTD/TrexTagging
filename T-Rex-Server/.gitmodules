@@ -1,0 +1,6 @@
+[submodule "DetectionDataPreprocess"]
+	path = DetectionDataPreprocess
+	url = https://github.com/AlgoLightLTD/DetectionDataPreprocess
+[submodule "ViT"]
+	path = ViT
+	url = https://github.com/AlgoLightLTD/ViT.git

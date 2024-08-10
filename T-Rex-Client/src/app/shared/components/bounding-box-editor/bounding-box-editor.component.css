@@ -1,0 +1,15 @@
+.canvas-container {
+  position: relative;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden; /* Don't allow vertical scrolling */
+  border: 1px solid #ccc;
+  width: 100%; /* Ensure it fits within the parent */
+  height: auto; /* Adjust height to be automatic */
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

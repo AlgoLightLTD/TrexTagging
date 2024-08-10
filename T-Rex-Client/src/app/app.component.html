@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Landing Page</title>
+</head>
+<body class="bg-white">
+  <header class="bg-white text-black py-4 bg-opacity-60 backdrop-blur-md sticky">
+    <div class="container mx-auto flex justify-between items-center px-2">
+      <div class="flex items-center">
+        <h1 class="text-2xl font-bold ">Detectify</h1>
+      </div>
+      <div class="flex">
+        <button routerLink="/login" class="text-gray-950 px-4 py-2 base-btn-transition" *ngIf="!(authService.user$ | async)">Login</button>
+
+        <!-- <span class="text-black px-4 py-2" *ngIf="(authService.user$ | async)">Balance: {{ balance }} $</span>
+        <button class="text-gray-950 px-4 py-2 base-btn-transition" *ngIf="(authService.user$ | async)">Buy More</button>
+        <button class="text-gray-950 px-4 py-2 base-btn-transition" *ngIf="(authService.user$ | async)" (click)="moveToHome()">
+          <i class="fas fa-home"></i>
+        </button>       -->
+        <button class="text-gray-950 px-4 py-2 base-btn-transition" *ngIf="(authService.user$ | async)" (click)="authService.signOut()">Log Out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto py-8 bg-transparent min-h-screen">
+    <router-outlet>
+    </router-outlet>
+  </main>
+
+  <footer class="bg-white py-4 border-t-2 border-gray-200">
+    <div class="mx-auto text-center">
+      <p class="mb-4 text-black">©2024 Detectify. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

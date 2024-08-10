@@ -1,0 +1,9 @@
+<div id="canvasWrapper" #canvasWrapper class="canvas-container">
+    <canvas #baseCanvas></canvas>
+    <canvas #overlayCanvas
+            (mousedown)="onMouseDown($event)"
+            (mousemove)="onMouseMove($event)"
+            (mouseup)="onMouseUp($event)"
+            (mouseout)="onMouseUp($event)"></canvas>
+  </div>
+  

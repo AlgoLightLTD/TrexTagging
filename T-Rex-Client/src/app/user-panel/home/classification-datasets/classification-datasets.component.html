@@ -1,0 +1,23 @@
+<div class="grid grid-cols-3 gap-4 mt-2">
+    <div *ngFor="let classification_dataset of classification_datasets; let idx = index" class="relative group base-course bg-gray-300 flex items-center justify-center hover:cursor-pointer"
+            (click)="showClassificationDatasetMetadata(idx)">
+        <p class="text-center">{{classification_dataset.title}}</p>
+        <div class="dropdown-content absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 top-2/3">
+            <a class="dropdown-option" (click)="editClassificationDataset(idx); $event.stopPropagation()">
+                <i class="fas fa-edit mr-2"></i>Edit Classification Dataset
+            </a>
+            <a class="dropdown-option" (click)="copyClassificationDataset(idx); $event.stopPropagation()">
+                <i class="fas fa-edit mr-2"></i>Create Copy of Classification Dataset
+            </a>
+            <a class="dropdown-option" (click)="deleteClassificationDataset(idx); $event.stopPropagation()">
+                <i class="fas fa-solid fa-trash mr-2"></i>Delete Classification Dataset
+            </a>             
+        </div>
+    </div>    
+    <button (click)="addClassificationDataset()"
+        class="base-course bg-gray-50 border-dashed hover:bg-gray-100">
+        <span class="mb-1">Add Classification Dataset</span>
+        <span class="text-xl">+</span>
+    </button>             
+</div>
+<app-loading-animation></app-loading-animation>

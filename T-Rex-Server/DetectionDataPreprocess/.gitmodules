@@ -1,0 +1,12 @@
+[submodule "TRex"]
+	path = TRex
+	url = https://github.com/AlgoLightLTD/TRex
+[submodule "DetectionAnalysis"]
+	path = DetectionAnalysis
+	url = https://github.com/AlgoLightLTD/DetectionAnalysis
+[submodule "DetectionCleaning"]
+	path = DetectionCleaning
+	url = https://github.com/AlgoLightLTD/DetectionCleaning
+[submodule "DetectionPostprocess"]
+	path = DetectionPostprocess
+	url = https://github.com/AlgoLightLTD/DetectionPostprocess

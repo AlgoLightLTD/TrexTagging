@@ -1,0 +1,19 @@
+<div class="grid grid-cols-3 gap-4 mt-2">
+    <div *ngFor="let model of models; let idx = index" class="relative group base-course bg-gray-300 flex items-center justify-center hover:cursor-pointer"
+            (click)="showModelMetadata(idx)">
+        <p class="text-center">{{model.title}}</p>
+        <span class="text-center text-xs text-gray-600" *ngIf="model.model_type && model.model_type!=''">Model Type: {{model.model_type}}</span>
+        <span class="text-center text-xs text-gray-600" *ngIf="model.status && model.status!=''">Status: {{model.status}}</span>
+        <div class="dropdown-content absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 top-2/3">
+            <a class="dropdown-option" (click)="deleteModel(idx); $event.stopPropagation()">
+                <i class="fas fa-solid fa-trash mr-2"></i>Delete Model
+            </a>             
+        </div>
+    </div>    
+    <button (click)="addModel()"
+        class="base-course bg-gray-50 border-dashed hover:bg-gray-100">
+        <span class="mb-1">Upload Model</span>
+        <span class="text-xl">+</span>
+    </button>             
+</div>
+<app-loading-animation></app-loading-animation>

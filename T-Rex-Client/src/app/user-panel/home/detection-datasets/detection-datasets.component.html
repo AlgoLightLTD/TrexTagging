@@ -1,0 +1,18 @@
+<div class="grid grid-cols-3 gap-4 mt-2">
+    <div *ngFor="let detection_dataset of detection_datasets; let idx = index" class="relative group base-course bg-gray-300 flex items-center justify-center hover:cursor-pointer"
+            (click)="showDetectionDatasetMetadata(idx)">
+        <p class="text-center">{{detection_dataset.title}}</p>
+        <span class="text-center text-xs text-gray-600" *ngIf="detection_dataset.status!=''">Status: {{detection_dataset.status}}</span>
+        <div class="dropdown-content absolute hidden group-hover:block bg-white shadow-lg rounded-md p-2 top-2/3">
+            <a class="dropdown-option" (click)="deleteDetectionDataset(idx); $event.stopPropagation()">
+                <i class="fas fa-solid fa-trash mr-2"></i>Delete Detection Dataset
+            </a>             
+        </div>
+    </div>    
+    <button *ngIf="detection_datasets.length === 0" 
+        (click)="router.navigate(['/user-panel/home/detection-data'])"
+        class="base-course bg-gray-50 border-dashed hover:bg-gray-100">
+        <span class="mb-1">To Add Detection Dataset Go To Detection Data</span>
+    </button>             
+</div>
+<app-loading-animation></app-loading-animation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/T-Rex-Server/DetectionDataPreprocess" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/T-Rex-Server/DetectionDataPreprocess/DetectionAnalysis" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/T-Rex-Server/DetectionDataPreprocess/DetectionCleaning" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/T-Rex-Server/DetectionDataPreprocess/DetectionPostprocess" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/T-Rex-Server/DetectionDataPreprocess/TRex" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/T-Rex-Server/ViT" vcs="Git" />
+  </component>
+</project>

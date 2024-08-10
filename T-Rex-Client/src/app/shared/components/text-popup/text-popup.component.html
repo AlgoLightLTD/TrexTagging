@@ -1,0 +1,9 @@
+<div class="fixed inset-0 flex items-center justify-center rounded-xl">
+    <div class="bg-white shadow-lg p-6 flex flex-col items-center">
+        <p [ngClass]="color" class="text-xl text-center">{{ msg }}</p>
+        <button (click)="closeDialog()"
+            class="mt-4 px-4 py-2 bg-not-selected-green text-white rounded hover:bg-selected-green transition duration-300 ease-in-out transform hover:scale-105">
+                Close
+        </button>
+    </div>
+</div>

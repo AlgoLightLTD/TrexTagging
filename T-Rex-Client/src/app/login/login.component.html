@@ -1,0 +1,21 @@
+<body>
+    <section class="bg-white h-screen flex justify-center">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold mb-4 text-black">Detectify</h1>
+            <p class="text-gray-500 font-bold text-base mb-4">
+                By proceeding, you agree to our 
+                <span class="text-text-green">Terms of Use</span>
+                and 
+                <span class="text-text-green">Privacy Policy.</span>
+            </p>
+            <button type="button" 
+                class="btn bg-black  transform transition-all duration-500  hover:scale-105 rounded-md"
+                (click)="authService.googleSignin()">
+                    <div class="inline-flex items-center justify-center my-1 mx-2">
+                        <img class="w-6 h-6 mr-2" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo">
+                        <p class="text-white">Log in with Google</p>
+                    </div>
+            </button>            
+        </div>
+    </section>
+</body>
